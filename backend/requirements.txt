@@ -1,0 +1,9 @@
+fastapi==0.103.2
+uvicorn==0.23.2
+ultralytics>=8.1.0
+opencv-python-headless==4.8.1.78
+python-multipart==0.0.6
+pydantic==2.4.2
+firebase-admin==6.2.0
+shapely>=2.0.0
+yt-dlp>=2023.10.13

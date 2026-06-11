@@ -1,0 +1,25 @@
+import requests, time, json, subprocess
+base_url = 'http://localhost:8000/api'
+print('\n=== VERIFICATION 1: Fast Camera Save ===')
+start_time = time.time()
+r1 = requests.post(f'{base_url}/cameras/add', json={'cam_id': 'cam_basement_a', 'url': 'C:/app/uploads/videos/2b0aa0f2-85bf-461c-a75b-7e6f57412edc.mp4', 'name': 'Basement A', 'location': 'Basement A'})
+print(f'Camera 1 Save Time: {(time.time() - start_time)*1000:.0f}ms', r1.json())
+start_time = time.time()
+r2 = requests.post(f'{base_url}/cameras/add', json={'cam_id': 'cam_level_1', 'url': 'C:/app/uploads/videos/2b0aa0f2-85bf-461c-a75b-7e6f57412edc.mp4', 'name': 'Level 1', 'location': 'Level 1'})
+print(f'Camera 2 Save Time: {(time.time() - start_time)*1000:.0f}ms', r2.json())
+print('\n=== VERIFICATION 2 & 3: Camera List ===')
+r_status = requests.get(f'{base_url}/cameras/status')
+print('Cameras:', list(r_status.json().keys()))
+print('\nWaiting 15 seconds for AI Detection...')
+time.sleep(15)
+r_stats = requests.get(f'{base_url}/parking/statistics')
+print('\n=== VERIFICATION 5-8: AI Data ===')
+print(json.dumps(r_stats.json(), indent=2))
+print('\n=== VERIFICATION 9: Persistence ===')
+subprocess.run(['docker', 'compose', 'restart', 'backend'], capture_output=True)
+time.sleep(8)
+try:
+    r_status_after = requests.get(f'{base_url}/cameras/status')
+    print('Cameras after Reboot:', list(r_status_after.json().keys()))
+except Exception as e:
+    print('Backend not ready yet...')

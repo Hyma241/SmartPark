@@ -1,0 +1,64 @@
+:root {
+  /* Colors - Light Mode */
+  --bg-primary: #f5f7ff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f3f9;
+  
+  --text-primary: #1e1b4b; /* Deep navy */
+  --text-secondary: #4b5563;
+  --text-inverse: #ffffff;
+  
+  --primary-color: #7c3aed; /* Vibrant purple */
+  --secondary-color: #ec4899; /* Pink */
+  
+  --gradient-text: linear-gradient(90deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%);
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  
+  --border-color: #e2e8f0;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Animations */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme='dark'] {
+  /* Colors - Dark Mode */
+  --bg-primary: #0f172a; /* Deep slate */
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-inverse: #0f172a;
+  
+  --border-color: #334155;
+  
+  /* Glassmorphism Dark */
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}

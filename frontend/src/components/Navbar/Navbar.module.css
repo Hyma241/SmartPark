@@ -1,0 +1,125 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem var(--spacing-xl);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(238, 240, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #6366f1, #9333ea);
+  color: white;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLinks a {
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.navLinks a:hover {
+  color: #6366f1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loginBtn {
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.loginBtn:hover {
+  color: #6366f1;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  background: var(--bg-tertiary);
+  border-radius: 20px;
+  padding: 0.25rem;
+  width: 64px;
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+}
+
+.toggleIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  position: absolute;
+  transition: all var(--transition-normal);
+}
+
+.sun {
+  left: 4px;
+}
+
+.moon {
+  right: 4px;
+}
+
+.activeToggle {
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+}

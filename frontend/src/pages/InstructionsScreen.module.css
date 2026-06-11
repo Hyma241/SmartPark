@@ -1,0 +1,121 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.timelineContainer {
+  width: 100%;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 32px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.stepsWrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+}
+
+.iconBox {
+  width: 64px;
+  height: 64px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.stepItem:hover .iconBox {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+}
+
+.stepNumber {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stepTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stepDescription {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.actionContainer {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .stepsWrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .timelineLine {
+    display: none;
+  }
+  .stepItem {
+    width: 100%;
+  }
+}
